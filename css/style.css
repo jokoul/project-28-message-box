@@ -63,6 +63,9 @@ form {
   margin-bottom: 20px;
   border: 1 solid #666;
 }
+.updateInput {
+  width: 100% !important;
+}
 #input .shout-btn {
   padding: 5px;
   margin-bottom: 30px;
@@ -74,6 +77,36 @@ form {
   color: #f4f4f4;
   padding: 5px;
   margin-bottom: 20px;
+}
+.buttons {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.deleteForm {
+  width: 20%;
+}
+.deleteBtn {
+  padding: 5px;
+  margin: 0;
+  height: 28px;
+  background-color: orangered;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.updateBtn {
+  cursor: pointer;
+  background-color: darkcyan;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 5px;
+  text-decoration: none;
 }
 @media only screen and (max-width: 1135px) {
   #input input[type="text"] {

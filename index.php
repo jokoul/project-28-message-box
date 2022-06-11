@@ -1,5 +1,6 @@
 <?php include('database.php'); ?>
 <?php include('process.php'); ?>
+<?php include('delete.php'); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,9 +18,18 @@
                 <ul>
                     <?php while($row=mysqli_fetch_assoc($shouts)): ?>
                         <!-- <p><?php print_r($row); ?></p> -->
-                        <li class="shout">
-                        <span><?php echo $row['time'] ?> - </span><span class="name"><?php echo $row['user'] ?></span>: <?php echo $row['message'] ?>
-                    </li>
+                        <li data-id="<?php echo $row['id'] ?>" class="shout">
+                            <span><?php echo $row['time'] ?> - </span><span class="name"><?php echo $row['user'] ?></span>: <?php echo $row['message'] ?>
+                        </li>
+                        <div class="buttons">
+                            <div>
+                                <a class="updateBtn" href="updateView.php?id=<?php echo $row['id'] ?>">update</a>
+                            </div>
+                            <form class="deleteForm" action="delete.php" method="post">
+                                <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+                                <input class="deleteBtn" type="submit" name="submit" value="Delete">
+                            </form>
+                        </div>
                     <?php endwhile; ?>
                 </ul>
             </main>
